@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clinton Gao</title>
+  <meta name="description" content="Clinton Gao — CS undergraduate at McGill. LLM agents, grounding, and evaluation." />
+  <style>
+    :root {
+      --bg: #fcfcfb;
+      --ink: #1a1a1a;
+      --muted: #6b6b6b;
+      --faint: #8a8a8a;
+      --accent: #1e3a5f;
+      --accent-2: #2e5a8f;
+      --rule: #e6e6e2;
+      --pill: #eef1f5;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 72px 28px 96px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease, color .15s ease; }
+    a:hover { color: var(--accent-2); border-bottom-color: currentColor; }
+
+    /* Header */
+    header { margin-bottom: 8px; }
+    h1 { font-size: 34px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.01em; }
+    .tagline { font-size: 18px; color: var(--ink); margin: 0 0 6px; }
+    .keywords { font-size: 14px; color: var(--faint); margin: 0 0 18px; letter-spacing: .01em; }
+    nav.contact { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14.5px; margin-bottom: 6px; }
+    nav.contact a { color: var(--accent); }
+
+    /* Sections */
+    section { margin-top: 44px; }
+    h2 {
+      font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--faint); margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    }
+    p { margin: 0 0 14px; }
+    .lead { color: #2a2a2a; }
+
+    /* Projects */
+    .proj { margin-bottom: 26px; }
+    .proj:last-child { margin-bottom: 0; }
+    .proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .proj-title { font-size: 16.5px; font-weight: 650; margin: 0; }
+    .proj-meta { font-size: 13px; color: var(--faint); white-space: nowrap; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 9px; }
+    .tag { font-size: 11.5px; color: #3c5470; background: var(--pill); padding: 2px 9px; border-radius: 999px; letter-spacing: .01em; }
+    .proj p { margin: 0 0 8px; font-size: 15px; color: #2c2c2c; }
+    .proj .links { font-size: 13.5px; color: var(--muted); }
+    .inprog { font-size: 12px; color: #8a6d3b; background: #fbf3e2; padding: 1px 8px; border-radius: 999px; }
+
+    footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--faint); }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 48px 20px 72px; }
+      h1 { font-size: 28px; }
+      .tagline { font-size: 16.5px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ============ HEADER ============ -->
+    <!-- TODO: replace [username] and [your-email] below -->
+    <header>
+      <h1>Clinton Gao</h1>
+      <p class="tagline">Computer&nbsp;Science undergraduate at McGill&nbsp;University — studying how language models fail, and how to evaluate them.</p>
+      <p class="keywords">LLM agents&nbsp;&nbsp;·&nbsp;&nbsp;grounding &amp; anti-hallucination&nbsp;&nbsp;·&nbsp;&nbsp;trace-grounded evaluation</p>
+      <nav class="contact">
+        <a href="mailto:yifeng.gao@mail.mcgill.ca">Email</a>
+        <a href="https://github.com/xjdxx123">GitHub</a>
+        <a href="assets/Clinton_Gao_CV.pdf">CV (PDF)</a>
+        <a href="assets/comp550_implicit_negation.pdf">NLP paper (PDF)</a>
+        <!-- <a href="https://www.linkedin.com/in/[you]">LinkedIn</a> -->
+      </nav>
+    </header>
+
+    <!-- ============ RESEARCH INTERESTS ============ -->
+    <section>
+      <h2>Research interests</h2>
+      <p class="lead">I'm interested in the <strong>failure modes and evaluation of language models</strong> — particularly tool-using LLM agents: when their natural-language outputs stay grounded in the evidence their tools actually retrieved, how they fail when they don't, and how to measure that rigorously. My current work builds and evaluates a real LLM agent end-to-end, with a focus on claim-level grounding, empirical failure taxonomies, and the validity of LLM-as-judge evaluation.</p>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section>
+      <h2>Research &amp; projects</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <p class="proj-title">League AI Coach — LLM tool-using agent &amp; trace-grounded evaluation</p>
+          <span class="proj-meta">TypeScript</span>
+        </div>
+        <div class="tags">
+          <span class="tag">LLM agents</span><span class="tag">evaluation</span><span class="tag">Express</span><span class="tag">Supabase</span><span class="tag">Zod</span>
+        </div>
+        <p>A 21-tool streaming LLM coaching agent over League of Legends match data, persisting every tool call, argument, and result per turn. I built a trace-grounded evaluation harness (deterministic checks + a hand-authored gold-match dataset + LLM-as-judge), derived a 6-class failure taxonomy (raising grounding 46→83 and overall eval 64→94 across mitigation rounds), and isolated pre-injection's causal effect via a controlled ablation as −31% tool calls. <span class="inprog">in progress: multi-agent match analysis</span></p>
+        <p class="links">Code: private (access on request).</p>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <p class="proj-title">Implicit Negation in Sentiment Classification</p>
+          <span class="proj-meta">COMP 550 (NLP) · Python</span>
+        </div>
+        <div class="tags">
+          <span class="tag">NLP research</span><span class="tag">BERT</span><span class="tag">PyTorch</span><span class="tag">HuggingFace</span>
+        </div>
+        <p>An ACL-format research paper (team of 3; my role: model implementation &amp; experiments) studying how traditional models (Naive Bayes, Logistic Regression) vs. fine-tuned BERT handle <em>implicit</em> negation on IMDb — evaluation stratified by negation type, plus a lexicon-augmentation intervention that recovers ~72% of Logistic Regression's degradation but cannot close the gap to BERT.</p>
+        <p class="links"><a href="assets/comp550_implicit_negation.pdf">Read the paper (PDF)</a></p>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <p class="proj-title">Quantitative Factor-Investing System</p>
+          <span class="proj-meta">Python</span>
+        </div>
+        <div class="tags">
+          <span class="tag">quantitative finance</span><span class="tag">backtesting</span><span class="tag">pandas</span>
+        </div>
+        <p>A factor-lab that computes asset returns and evaluates equity factors (e.g. 12-1 momentum), with a Probability-of-Backtest-Overfitting (PBO) guard against overfitting. <span class="inprog">in progress</span></p>
+      </div>
+    </section>
+
+    <!-- ============ NOTES (optional) ============
+         Uncomment + add genuine notes/explorations of your own (e.g. agent-loop
+         engineering). Keep it framed as "notes", and write your OWN analysis.
+    <section>
+      <h2>Notes &amp; explorations</h2>
+      <div class="proj">
+        <div class="proj-head">
+          <p class="proj-title">Engineering agent loops — notes</p>
+          <span class="proj-meta">2026</span>
+        </div>
+        <p>Short writeups on autonomous agent loops and orchestration patterns.</p>
+      </div>
+    </section>
+    ============================================ -->
+
+    <footer>
+      © 2026 Clinton Gao · Montréal, QC · <a href="mailto:yifeng.gao@mail.mcgill.ca">yifeng.gao@mail.mcgill.ca</a>
+    </footer>
+
+  </div>
+</body>
+</html>
